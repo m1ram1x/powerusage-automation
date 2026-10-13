@@ -1,0 +1,7 @@
+*
+!main.py
+!telegram_alerts.py
+!telegram_setup.py
+!container_entrypoint.py
+!requirements.txt
+!Dockerfile

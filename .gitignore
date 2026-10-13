@@ -1,0 +1,38 @@
+# Local secrets (only the deliberately empty example is tracked).
+.env
+.env.*
+!.env.example
+telegram.env
+telegram.env.*
+!telegram.env.example
+*.pem
+*.key
+
+# Private reports and measurements.
+/input/*
+!/input/.gitkeep
+/output/*
+!/output/.gitkeep
+/alarm-test/
+
+# Local environments, caches and editor settings.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+.~lock.*
+~$*.xlsx
+
+# Distribute built images and installers as Release assets, not source files.
+*.tar
+*.tar.gz
+*.zip
+*.run
+/tmp/
+/portable/

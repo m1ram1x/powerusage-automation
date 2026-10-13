@@ -1,0 +1,18 @@
+PDU_2A1;
+slot:/Services/ReportService/PDU_2A1;
+06.10.2026;
+;
+Rack_No;11A
+Rack_Name;Тест A11
+11A_PDU2_max;11A_PDU2_average
+0.35;0.24
+;
+Rack_No;1B
+Rack_Name;Тест B1
+1B_PDU2_average;1B_PDU2_max
+1.10;1.40
+;
+Rack_No;2B
+Rack_Name;Тест B2
+2B_PDU2_max;2B_PDU2_average
+1.10;0.88

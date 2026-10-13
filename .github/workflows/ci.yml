@@ -1,0 +1,31 @@
+name: Tests and Docker
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Unit tests (no real Telegram requests)
+        run: python -m unittest discover -s tests -v
+      - name: Check launcher syntax
+        run: bash -n run.sh
+      - name: Build Docker image and process synthetic data
+        run: bash run.sh --demo --rebuild
+      - name: Check report exists
+        run: test -f output/PowerUsage_2026-10-06.xlsx
